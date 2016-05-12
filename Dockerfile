@@ -17,7 +17,7 @@ RUN mkdir /app
 WORKDIR /app
 
 #下载云监工源代码
-RUN git clone https://github.com/hauntek/crysadm.git
+RUN git clone https://github.com/seatom/crysadm.git
 
 #Redis数据库保存目录
 VOLUME ["/var/lib/redis"]
@@ -29,7 +29,7 @@ RUN python3.4 get-pip.py
 RUN pip3.4 install redis && pip3.4 install requests && pip3.4 install flask
 
 #复制配置文件
-RUN mv /etc/nginx/sites-available/default ./
+RUN mv /etc/nginx/sites-available/default ./p
 COPY default /etc/nginx/sites-available/
 COPY run.sh ./
 RUN apt-get clean
